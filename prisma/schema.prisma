@@ -15,10 +15,10 @@ datasource db {
 }
 
 model Customer {
-  id    String @id @default(uuid())
-  name  String
-  email String @unique
-  phone String
+  customerId String @id @default(uuid())
+  name       String
+  email      String @unique
+  phone      String
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -28,12 +28,12 @@ model Customer {
 }
 
 model Bike {
-  id         String    @id @default(uuid())
+  bikeId     String    @id @default(uuid())
   brand      BikeBrand
   model      String
   year       Int
   customerId String
-  customer   Customer  @relation(fields: [customerId], references: [id])
+  customer   Customer  @relation(fields: [customerId], references: [customerId])
 
   createdAt      DateTime        @default(now())
   serviceRecords ServiceRecord[]
@@ -49,17 +49,17 @@ model ServiceRecord {
   description    String
   status         status
 
-  bike Bike @relation(fields: [bikeId], references: [id])
+  bike Bike @relation(fields: [bikeId], references: [bikeId])
 
   @@map("service_records")
 }
 
 enum BikeBrand {
-  HONDA
-  YAMAHA
-  KAWASAKI
-  SUZUKI
-  KTM
+  Yamaha
+  Honda
+  Kawasaki
+  Suzuki
+  Ktm
 }
 
 enum status {

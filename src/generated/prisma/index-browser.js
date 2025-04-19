@@ -118,7 +118,7 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
 });
 
 exports.Prisma.CustomerScalarFieldEnum = {
-  id: 'id',
+  customerId: 'customerId',
   name: 'name',
   email: 'email',
   phone: 'phone',
@@ -127,7 +127,7 @@ exports.Prisma.CustomerScalarFieldEnum = {
 };
 
 exports.Prisma.BikeScalarFieldEnum = {
-  id: 'id',
+  bikeId: 'bikeId',
   brand: 'brand',
   model: 'model',
   year: 'year',
@@ -154,11 +154,11 @@ exports.Prisma.QueryMode = {
   insensitive: 'insensitive'
 };
 exports.BikeBrand = exports.$Enums.BikeBrand = {
-  HONDA: 'HONDA',
-  YAMAHA: 'YAMAHA',
-  KAWASAKI: 'KAWASAKI',
-  SUZUKI: 'SUZUKI',
-  KTM: 'KTM'
+  Yamaha: 'Yamaha',
+  Honda: 'Honda',
+  Kawasaki: 'Kawasaki',
+  Suzuki: 'Suzuki',
+  Ktm: 'Ktm'
 };
 
 exports.status = exports.$Enums.status = {
