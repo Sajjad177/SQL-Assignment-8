@@ -1,3 +1,4 @@
+import { status } from "../../generated/prisma";
 import { prisma } from "../../shared/prisma";
 
 const createServiceInDB = async (payload: any) => {
@@ -26,6 +27,22 @@ const getSingleServiceFromDB = async (serviceId: string) => {
   return result;
 };
 
+const getAllOverdueServicesFromDB = async () => {
+  const sevenDaysAgo = new Date();
+  sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+
+  const result = await prisma.serviceRecord.findMany({
+    where: {
+      status: { in: [status.pending, status.in_progress] },
+      serviceDate: {
+        lt: sevenDaysAgo,
+      },
+    },
+  });
+
+  return result;
+};
+
 const updateServiceInDB = async (serviceId: string, payload: any) => {
   const result = await prisma.serviceRecord.update({
     where: {
@@ -41,4 +58,5 @@ export const ServiceService = {
   getAllServicesFromDB,
   getSingleServiceFromDB,
   updateServiceInDB,
+  getAllOverdueServicesFromDB,
 };
