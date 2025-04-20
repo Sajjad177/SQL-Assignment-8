@@ -153,6 +153,11 @@ exports.Prisma.QueryMode = {
   default: 'default',
   insensitive: 'insensitive'
 };
+
+exports.Prisma.NullsOrder = {
+  first: 'first',
+  last: 'last'
+};
 exports.BikeBrand = exports.$Enums.BikeBrand = {
   Yamaha: 'Yamaha',
   Honda: 'Honda',
