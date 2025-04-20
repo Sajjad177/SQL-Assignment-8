@@ -20,6 +20,31 @@ const createBikeInDB = async (payload: any) => {
   return result;
 };
 
+const getAllBikesFromDB = async () => {
+  const result = await prisma.bike.findMany({});
+
+  if (!result) {
+    throw new AppError("No bikes found", StatusCodes.NOT_FOUND);
+  }
+
+  return result;
+};
+
+const getSingleBikeFromDB = async (bikeId: string) => {
+  const result = await prisma.bike.findUnique({
+    where: {
+      bikeId,
+    },
+  });
+
+  if (!result) {
+    throw new AppError("Bike not found", StatusCodes.NOT_FOUND);
+  }
+  return result;
+};
+
 export const bikeService = {
   createBikeInDB,
+  getAllBikesFromDB,
+  getSingleBikeFromDB,
 };
