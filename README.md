@@ -9,16 +9,15 @@ This is a backend API for managing bike servicing tasks. You can add and manage 
 **[https://bike-servicing-management-chi.vercel.app](https://bike-management-delta.vercel.app)**
 
 
-## ⚙️ Setup Guide
-
 ## 🛠️ Tech Stack
 
 - **Node.js & Express.js**: Backend runtime and API framework  
 - **TypeScript**: Type-safe JavaScript  
 - **Prisma ORM**: Database management  
 - **PostgreSQL**: Relational database
+
  
-### 🚀 Steps
+## ⚙️ Setup Guide
 
 ## How to Clone and Run the Project Locally : 
 
