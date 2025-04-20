@@ -2,7 +2,7 @@
 
 ## 📝 Overview
 
-A backend API for managing bike servicing operations, supporting CRUD for customers, bikes, and service records, with endpoints for service assignment and completion.
+This is a backend API for managing bike servicing tasks. You can add and manage customers, bikes, and service records. It also lets you assign services, track their status, and mark them as completed.
 
 ## 🌐 Live Backend
 
@@ -11,13 +11,13 @@ A backend API for managing bike servicing operations, supporting CRUD for custom
 
 ## ⚙️ Setup Guide
 
-### Prerequisites
+## 🛠️ Tech Stack
 
-- Node.js (v16+)
-- PostgreSQL (v12+)
-- npm or yarn
-- A PostgreSQL database (e.g., [Neon](https://neon.tech), Supabase, or local)
-
+- **Node.js & Express.js**: Backend runtime and API framework  
+- **TypeScript**: Type-safe JavaScript  
+- **Prisma ORM**: Database management  
+- **PostgreSQL**: Relational database
+ 
 ### 🚀 Steps
 
 ## How to Clone and Run the Project Locally : 
@@ -56,3 +56,13 @@ A backend API for managing bike servicing operations, supporting CRUD for custom
    ```plaintext
      npx prisma migrate dev --name init
    ```
+
+
+## 🔑 Key Features
+
+- 🧑‍💼 **Customer Management**: Create, read, update, and delete customer records  
+- 🏍️ **Bike Management**: Add new bikes and retrieve bike data  
+- 🔧 **Service Management**: Assign services, update progress, and mark services as complete  
+- ⏰ **Pending/Overdue Services**: Fetch services that are overdue by 7+ days or still pending  
+- 🚨 **Error Handling**: Unified and standardized API error responses for easier debugging  
+
